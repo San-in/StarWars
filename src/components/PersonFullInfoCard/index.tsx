@@ -11,11 +11,13 @@ interface Props {
   redirectToBack: () => void;
 }
 export const PersonFullInfoCard = ({person, redirectToBack}: Props) => {
+  const isHasBirthYear =
+    !!person?.birth_year && person?.birth_year !== 'unknown';
   return (
-    <ScrollView contentContainerStyle={{marginTop: '33.33%'}}>
+    <ScrollView contentContainerStyle={styles.scroll}>
       <View style={styles.card}>
         <Text style={styles.title}>
-          {person.name} ({person.birth_year})
+          {person.name} {isHasBirthYear && `(${person.birth_year})`}
         </Text>
         <PersonFullInfoRow label={'Gender'} value={person.gender} />
         <PersonFullInfoRow label={'Height'} value={person.height} />

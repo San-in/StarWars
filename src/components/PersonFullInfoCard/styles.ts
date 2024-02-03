@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 import {COLORS} from '../../common/colors.ts';
 
 export const styles = StyleSheet.create({
+  scroll: {marginTop: '33.33%'},
   card: {
     width: 300,
     padding: 20,
